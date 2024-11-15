@@ -85,7 +85,7 @@ Currently, the API supports **English** and **Arabic** news articles. The summar
 The `notebooks/` directory includes the following key notebooks, which document the entire model development pipeline:
 
 1. **`preparing_dataset.ipynb`**: Describes the data collection, cleaning, and preprocessing process for preparing multilingual datasets.
-2. **`model_ssummarized-en-ar-news-mt5.ipynb`**:Covers the selection, fine-tuning, and evaluation of the mT5 model for summarizing English and Arabic news articles.
+2. **`summarize-en-ar-news-mt5.ipynb`**:Covers the selection, fine-tuning, and evaluation of the mT5 model for summarizing English and Arabic news articles.
 
 ## **Key Features**
 
