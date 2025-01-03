@@ -1,4 +1,4 @@
-# **Multilingual News Summarization API - Demo**
+# **Multilingual News Summarization API**
 
 This project provides a multilingual **news summarization** API, capable of generating concise summaries for articles in **English** and **Arabic**. The API utilizes the **Hugging Face mT5 model** fine-tuned for news summarization tasks, and is implemented using **FastAPI** for high performance and scalability. Below is a step-by-step guide to running the API locally and interacting with it.
 
