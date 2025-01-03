@@ -1,98 +1,106 @@
-# **Multilingual News Summarization API**
+# **Multilingual News Summarization API - Demo**
 
-This project provides a multilingual **news summarization** API, capable of generating concise summaries for articles in **English** and **Arabic**. The API utilizes the **Hugging Face mT5 model** fine-tuned for news summarization tasks, and is implemented using **FastAPI** for high performance and scalability.
+This project provides a multilingual **news summarization** API, capable of generating concise summaries for articles in **English** and **Arabic**. The API utilizes the **Hugging Face mT5 model** fine-tuned for news summarization tasks, and is implemented using **FastAPI** for high performance and scalability. Below is a step-by-step guide to running the API locally and interacting with it.
 
-## **Project Structure**
+---
 
-- **`app.py`**: FastAPI application serving the multilingual summarization model.
-- **`notebooks/`**: Jupyter notebooks that cover the entire model development pipeline: data preparation, model selection, fine-tuning, and evaluation.
-- **`requirements.txt`**: Lists all the Python dependencies required to run the project.
-- **`Procfile`**: Configuration file for deployment (e.g., on Heroku).
-- **`README.md`**: Documentation for setting up, running, and understanding the project.
+## **Live Demo**
 
-## **Model Development Workflow**
+You can try the **Multilingual News Summarization API** directly in your browser by visiting the Hugging Face Space:
 
-This project includes detailed notebooks documenting the model development process, from data preparation through fine-tuning:
+👉 **[Live Demo on Hugging Face](https://huggingface.co/spaces/YoussefAnwar/News-Summerization)**
 
-1. **`data_preparation`**: Data curation and preprocessing for training the multilingual summarization model. It includes steps for cleaning, tokenizing, and structuring the dataset.
-2. **`model_selection`**: Evaluation of various pre-trained transformer models, including mT5, to identify the most suitable model for the summarization task.
-3. **`fine_tuning`**: Fine-tuning the **mT5 model** on curated multilingual datasets (English and Arabic) to improve summarization accuracy.
-4. **`evaluation`**: Evaluation of the fine-tuned model using **ROUGE metrics**, with a focus on summary quality, coherence, and relevance.
+---
 
-## **Running the API Locally**
+## **Project Overview**
 
-### 1. Clone the repository:
+### **Key Features**
+- **Multilingual Support**: Summarize news articles in **English** and **Arabic**.
+- **High-Quality Summaries**: Powered by the **mT5 model**, fine-tuned for accuracy and coherence.
+- **Scalable API**: Built with **FastAPI** for fast and efficient request handling.
+- **Easy Deployment**: Ready for deployment on platforms like **Heroku**, **AWS**, or **Azure**.
 
+---
+
+## **How to Run the API Locally**
+
+### **Step 1: Clone the Repository**
+Clone the project repository to your local machine:
 ```bash
 git clone https://github.com/youssef-yasser-ali/multilingual-news-summarizer.git
+cd multilingual-news-summarizer
 ```
 
-### 2. Install the required dependencies:
-
+### **Step 2: Install Dependencies**
+Install the required Python packages:
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Run the FastAPI app:
-
+### **Step 3: Run the FastAPI App**
+Start the FastAPI server:
 ```bash
 uvicorn app:app --reload
 ```
 
-### 4. Access the API:
+### **Step 4: Access the API**
+Once the server is running, open your browser and navigate to:
+👉 **[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)**
 
-Once the app is running, visit the following URL to interact with the API:
+This will open the **Swagger UI**, where you can interact with the API and test the summarization functionality.
 
-[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-
-The **Swagger UI** will provide an easy interface to interact with the API and test the summarization functionality.
+---
 
 ## **API Usage**
 
 ### **Request Format**
+Send a `POST` request to the `/summarize` endpoint with the following JSON payload:
 
-You can send a `POST` request to the `/summarize` endpoint to generate a summary for any news article.
-
-**Request Example:**
-
+**Example Request:**
 ```json
 {
   "text": "The global economy is facing challenges as inflation rises across major economies, impacting consumer spending..."
 }
 ```
 
-**Response Example:**
+### **Response Format**
+The API will return a summarized version of the input text:
 
+**Example Response:**
 ```json
 {
   "summary": "The global economy is facing inflation challenges, affecting consumer spending across major economies."
 }
 ```
 
-### **Supported Languages**
+---
 
-Currently, the API supports **English** and **Arabic** news articles. The summarization model (`mT5`) was fine-tuned on multilingual datasets to provide accurate summaries in both languages.
+## **Supported Languages**
+The API currently supports **English** and **Arabic** news articles. The **mT5 model** was fine-tuned on multilingual datasets to ensure high-quality summaries in both languages.
 
-## **Model Highlights**
+---
 
-- **Multilingual Summarization**: The system supports summarization of news articles in **English** and **Arabic**.
-- **Transformer Model**: Built upon the **mT5 (Multilingual T5)** architecture, a state-of-the-art model for text-to-text tasks.
-- **Evaluation Metrics**: The model's performance was evaluated using **ROUGE metrics**, ensuring the generated summaries are coherent and high-quality.
-- **FastAPI Backend**: The API is built using **FastAPI**, providing asynchronous request handling for better performance and scalability.
+## **Model Development Workflow**
 
-## **Notebooks and Model Development**
+The project includes detailed Jupyter notebooks in the `notebooks/` directory, covering the entire model development pipeline:
 
-The `notebooks/` directory includes the following key notebooks, which document the entire model development pipeline:
+1. **`data_preparation`**: Data collection, cleaning, and preprocessing.
+2. **`model_selection`**: Evaluation of pre-trained models for summarization tasks.
+3. **`fine_tuning`**: Fine-tuning the **mT5 model** on multilingual datasets.
+4. **`evaluation`**: Performance evaluation using **ROUGE metrics**.
 
-1. **`preparing_dataset.ipynb`**: Describes the data collection, cleaning, and preprocessing process for preparing multilingual datasets.
-2. **`summarize-en-ar-news-mt5.ipynb`**:Covers the selection, fine-tuning, and evaluation of the mT5 model for summarizing English and Arabic news articles.
-
-## **Key Features**
-
-- **Multilingual Support**: Summarization of both **English** and **Arabic** news articles.
-- **High-Quality Summaries**: The **mT5 model**, fine-tuned with ROUGE evaluation, produces accurate and coherent summaries.
-- **Scalable API**: Built using **FastAPI** for fast, asynchronous handling of summarization requests, ready to be deployed in production environments.
+---
 
 ## **Deployment**
 
-To deploy this project to the cloud (e.g., **Heroku**, **AWS**, or **Azure**), follow the instructions provided in the `Procfile` for easy deployment configuration.
+To deploy the API to a cloud platform (e.g., **Heroku**, **AWS**, or **Azure**), follow the instructions in the `Procfile` for easy configuration.
+
+---
+
+## **Try It Out!**
+
+👉 **[Live Demo on Hugging Face](https://huggingface.co/spaces/YoussefAnwar/News-Summerization)**
+
+---
+
+This project is designed to be user-friendly, scalable, and ready for production use. Whether you're summarizing news articles for research, business, or personal use, this API has you covered! 🚀
